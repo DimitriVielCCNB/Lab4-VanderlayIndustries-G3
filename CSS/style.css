@@ -1,0 +1,385 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f6f6f6;
+    color: #111111;
+}
+
+header {
+    background-color: #111111;
+    color: #ffffff;
+    text-align: center;
+    padding: 1em 0;
+}
+
+.header-content h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #ffffff;
+    font-family: "Georgia", serif;
+    font-size: 50px; /* la taille de la police*/
+    font-weight: bold; /* Texte en gras */
+
+    text-shadow: 2px 2px 5px #ffffff;
+    animation: textAnimation 2s linear infinite;
+}
+
+
+
+
+
+nav {
+    background-color: #111111;
+    color: #ffffff;
+    text-align: center;
+    padding: 1em 0;
+
+    position: fixed;  /*Fixe le menu en haut de la fenêtre */
+ 
+    top: 0; /* Ajout de la propriété top pour fixer le menu au bord supérieur */
+
+    left: 0;
+    width: 250px; /* Assure la largeur fixe du menu */
+    overflow-y: auto; /* Permet le défilement du menu si nécessaire */
+    z-index: 1000; /* Assure que le menu est au-dessus du reste du contenu */
+
+
+}
+
+nav ul{
+    padding-left: 0px;
+}
+
+nav li {
+    margin: 0 5px 5px 0;
+    position: relative;
+    transition: margin 0.3s ease; /* Add a transition for smooth animation */
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #f6f6f6;
+}
+
+
+nav img {
+    /* position: absolute;  */
+    top: 5px;           
+    left: 5px; 
+    width: 150px;
+    height: auto;
+    margin-right: 10px; 
+}
+
+.middle {
+    position: absolute;
+
+    left: 250px; /* Ajuste la position du contenu principal pour éviter le chevauchement */
+    width: calc(100% - 250px); /* Ajuste la largeur du contenu principal */
+}
+
+
+.menu {
+    width: 250px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.item {
+    border-top: 1px solid #fff;
+    overflow: hidden;
+}
+
+
+
+.btn{
+  opacity: 1;
+  outline: 0;
+  color: #fff;
+  line-height: 40px;
+  position: relative;
+  text-align: center;
+  letter-spacing: 1px;
+  display: inline-block;
+  text-decoration: none;
+  font-family: 'Open Sans';
+  text-transform: uppercase;
+  width: 100%; 
+  
+  &:hover{
+    
+    &:after{
+      opacity: 1;
+      transform: translateY(0) rotateX(0);
+    }
+    
+    &:before{
+      opacity: 0;
+      transform: translateY(50%) rotateX(90deg);
+    }
+  }
+  
+  &:after{
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    color: #323237;
+    display: block;
+    transition: 0.5s;
+    position: absolute;
+    background: #adadaf;
+    content: attr(data-back);
+    transform: translateY(-50%) rotateX(90deg);
+  }
+  
+  &:before{
+    top: 0;
+    left: 0;
+    opacity: 1;
+    color: #adadaf;
+    display: block;
+    padding: 0 30px;
+    line-height: 40px;
+    transition: 0.5s;
+    position: relative;
+    background: #323237;
+    content: attr(data-front);
+    transform: translateY(0) rotateX(0);
+  }
+}
+
+
+
+
+
+.smenu {
+    background: #333;
+    overflow: hidden;
+    transition: max-height 0.3s;
+    max-height: 0;
+}
+
+.smenu a {
+    display: block;
+    padding: 16px 26px;
+    color: white;
+    margin: 4px 0;
+    position: relative;
+}
+
+.smenu a::before {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    background: #fff;
+    left: 0;
+    top: 0;
+    transition: .3s;
+    opacity: 0;
+}
+
+.smenu a:hover::before {
+    opacity: 1;
+}
+
+.item:target .smenu {
+    max-height: 10em;
+}
+
+main {
+    margin-left: 250px; /* Ajustement de la marge pour tenir compte de la largeur du menu */
+    padding: 20px;
+    background-color: #fff; 
+
+}
+
+
+
+
+/* Style des sections de produits */
+
+.product {
+    border: 1px solid #ddd; 
+    padding: 20px;
+    border-radius: 5px; 
+    background-color: #f9f9f9; 
+    width: calc(30% - 40px); 
+    text-align: center; 
+  }
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; 
+    gap: 20px; 
+  }
+  
+  .product img {
+    max-width: 75%; 
+    height: auto; 
+    margin-bottom: 10px; 
+    border-radius: 5px; 
+}
+
+  .product h3 {
+    color: black; 
+  }
+  
+  .product p {
+    margin-bottom: 15px; 
+  }
+  
+  /* .product a {
+    color: #ff6600; 
+    text-decoration: none;
+  } */
+  
+  .product a:hover {
+    text-decoration: underline; 
+  }
+
+
+
+/* Style Animation button Ajouter au panier */
+
+.add-to-cart-btn {
+    font-size: 16px;
+    width: 50%;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.add-to-cart-btn:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.add-to-cart-btn:active {
+    color: #000
+}
+
+.add-to-cart-btn:active:after {
+    background: transparent;
+}
+
+.add-to-cart-btn:hover:before {
+    opacity: 1;
+}
+
+.add-to-cart-btn:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+
+footer {
+    background-color: #111111;;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+
+
+
+/* Media Queries for Responsive Design */
+@media only screen and (max-width: 730px) {
+
+
+
+    main,aside {
+        flex: none; /* Réinitialise la flexibilité pour revenir à la mise en page par défaut */
+        width: 100%; /* Les éléments occupent la pleine largeur */
+    }
+
+    .header-content h1{
+        font-size: 220%; /* la taille de la police en % afin d'adapter avec les smalls screens */
+        margin:auto;
+        margin-left:auto;
+
+    }
+
+
+    .menu {
+        width: 100%;
+        height: auto; /* Ajustement de la hauteur pour s'adapter au contenu */
+        position: relative; /* Réinitialisation de la position */
+        align-items: center;
+    }
+
+    nav ul {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    left: 0px;
+    list-style-type: none;
+    width: 100%;
+    }
+
+    nav img {
+        /* margin-left: 20%; */
+        height: auto;
+    }
+
+    main {
+        margin-left: 0px; /* Réinitialisation de la marge pour les petits écrans */
+        align-items: center;
+    }
+
+    .product img {
+        max-width: 100%; 
+        margin: 0 auto; 
+    }
+
+    .product {
+      width: 80%; 
+    }
+}
