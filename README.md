@@ -28,7 +28,7 @@ Interaction avec les Clients : Faciliter l'interaction avec les clients par le b
 
     Logo, type Texte et Images : Pas spécifiés,
 
-    Mots-Clés pour les Moteurs de Recherche : Pas spécifiés,
+    Mots-Clés pour les Moteurs de Recherche : Vanderlay Industries - spécialisée dans la production et la vente de produits en latex de haute qualité,
 
     Style Graphique (Couleurs/Motifs.. ) : Pas spécifiés,
 
