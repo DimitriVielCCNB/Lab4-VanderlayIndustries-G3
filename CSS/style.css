@@ -19,7 +19,7 @@ header {
     align-items: center;
 
     color: #ffffff;
-    font-family: "Georgia", serif;
+    font-family: 'Helvetica', sans-serif;
     font-size: 50px; /* la taille de la police*/
     font-weight: bold; /* Texte en gras */
 
@@ -45,9 +45,23 @@ nav {
     width: 250px; /* Assure la largeur fixe du menu */
     overflow-y: auto; /* Permet le défilement du menu si nécessaire */
     z-index: 1000; /* Assure que le menu est au-dessus du reste du contenu */
-
+    
+    animation: glow 2s infinite; /* Utilisation de l'animation glow pendant 2 secondes en boucle infinie */
 
 }
+
+@keyframes glow {
+    0% {
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.863);
+    }
+    50% {
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
+    }
+    100% {
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    }
+  }
+  
 
 nav ul{
     padding-left: 0px;
@@ -270,7 +284,7 @@ main {
 
 .add-to-cart-btn:before {
     content: '';
-    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    background: linear-gradient(45deg, #ff00c8, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #002bff);
     position: absolute;
     top: -2px;
     left:-2px;
