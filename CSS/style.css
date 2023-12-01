@@ -27,6 +27,43 @@ header {
     animation: textAnimation 2s linear infinite;
 }
 
+/* effets et forme logo en NAV menu */
+.eff-img {
+  position:relative;
+  margin-left: 20px;
+  width: 200px;
+  height: 200px;
+  /*overflow: hidden;  Assure que l'ombre ne dépasse pas le cadre */
+}
+
+.logo {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.light-circle {
+  position: absolute;
+  content: "";
+  width: 85%; /* Ajuste la taille du cercle lumineux pour qu'il soit plus grand que l'image */
+  height: 85%;
+  border-radius: 50%;
+  animation: rotateGlow 7s linear infinite;
+  margin-top: 15px; /* Centre le cercle lumineux dans le cadre */
+  margin-left: 15px; /* Centre le cercle lumineux dans le cadre */
+}
+
+@keyframes rotateGlow {
+  0% {
+    transform: rotate(0deg);
+    box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.3);
+  }
+  100% {
+    transform: rotate(360deg);
+    box-shadow: 0 0 40px 10px rgba(255, 255, 255, 0.9);
+  }
+}
 
 
 
@@ -86,14 +123,7 @@ nav a:hover {
 }
 
 
-nav img {
-    /* position: absolute;  */
-    top: 5px;           
-    left: 5px; 
-    width: 150px;
-    height: auto;
-    margin-right: 10px; 
-}
+
 
 .middle {
     position: absolute;
@@ -255,10 +285,6 @@ main {
     margin-bottom: 15px; 
   }
   
-  /* .product a {
-    color: #ff6600; 
-    text-decoration: none;
-  } */
   
   .product a:hover {
     text-decoration: underline; 
@@ -344,7 +370,7 @@ footer {
 
 
 
-/* Media Queries for Responsive Design */
+/* Media for Responsive Design */
 @media only screen and (max-width: 730px) {
 
 
@@ -378,9 +404,10 @@ footer {
     width: 100%;
     }
 
-    nav img {
-        /* margin-left: 20%; */
-        height: auto;
+    .eff-img {
+       
+      margin-left: calc(52% - (50vw / 2));
+
     }
 
     main {
@@ -397,3 +424,9 @@ footer {
       width: 80%; 
     }
 }
+
+
+
+
+
+
