@@ -35,6 +35,9 @@
                 </div>
                 
 
+
+                
+
                     <ul>
                         <li class="item">
                             <a href="../html/index.html" class="btn" data-back="HOME" data-front="ACCUEIL"></a>
@@ -71,38 +74,61 @@
       
             <main>
                 <section class="about-us">
-                    <h2>À Propos de Nous</h2>
-                    <p> Vanderlay Industries, une entreprise fondée en 1954, est un acteur majeur dans le secteur de la vente de latex. Son histoire remonte à des décennies, lorsque M. Vanderlay, un visionnaire passionné par le potentiel du latex, a décidé de créer sa propre entreprise.</p>
+                    <h2 class="clickable">À Propos de Nous</h2>
+                    <p class="details hidden"> Vanderlay Industries, une entreprise fondée en 1954, est un acteur majeur dans le secteur de la vente de latex. Son histoire remonte à des décennies, lorsque M. Vanderlay, un visionnaire passionné par le potentiel du latex, a décidé de créer sa propre entreprise.</p>
                 </section>
             
                 <section class="our-mission">
-                    <h2>Notre Mission</h2>
-                    <p>Au fil des ans, Vanderlay Industries s'est spécialisée dans la production et la vente de produits en latex de haute qualité. Leur gamme de produits est vaste et variée, répondant aux besoins des différents secteurs de l'industrie.</p>
+                    <h2 class="clickable">Notre Mission</h2>
+                    <p class="details hidden">Au fil des ans, Vanderlay Industries s'est spécialisée dans la production et la vente de produits en latex de haute qualité. Leur gamme de produits est vaste et variée, répondant aux besoins des différents secteurs de l'industrie.</p>
                 </section>
             
                 <section class="products-services">
-                    <h2>Nos Produits et Services</h2>
-                    <p>Voici quelques exemples notables de produits proposés par Vanderlay Industries :
+                    <h2 class="clickable">Nos Produits et Services</h2>
+                    <p class="details hidden">Voici quelques exemples notables de produits proposés par Vanderlay Industries :<br><br>
  
-                        <p>  1. Matelas en latex naturel : Vanderlay Industries est réputée pour sa ligne de matelas en latex naturel, offrant un soutien optimal, un confort exceptionnel et des propriétés hypoallergéniques. Ces matelas sont conçus pour offrir un sommeil réparateur et sain.</p>
+                          1. Matelas en latex naturel : Vanderlay Industries est réputée pour sa ligne de matelas en latex naturel, offrant un soutien optimal, un confort exceptionnel et des propriétés hypoallergéniques. Ces matelas sont conçus pour offrir un sommeil réparateur et sain.<br><br>
+                        
+                          2. Gants en latex jetables : Les gants en latex jetables de Vanderlay Industries sont largement utilisés dans le domaine médical, l'industrie alimentaire et d'autres secteurs nécessitant une protection hygiénique. Ils sont fabriqués avec soin pour assurer une excellente sensibilité tactile et une résistance à la perforation.   https://seinfeld.fandom.com/wiki/Vandelay_Industries<br><br>
                          
-                        <p> 2. Gants en latex jetables : Les gants en latex jetables de Vanderlay Industries sont largement utilisés dans le domaine médical, l'industrie alimentaire et d'autres secteurs nécessitant une protection hygiénique. Ils sont fabriqués avec soin pour assurer une excellente sensibilité tactile et une résistance à la perforation.   https://seinfeld.fandom.com/wiki/Vandelay_Industries</p>
-                         
-                        <p> 3. Produits médicaux en latex : Vanderlay Industries propose également une large gamme de produits médicaux en latex tels que des cathéters, des gants chirurgicaux et des produits de protection. Ces articles répondent aux normes de qualité les plus strictes et sont utilisés par les professionnels de la santé du monde entier.</p>
-                         
-                         <p>4. Vêtements en latex : Vanderlay Industries est également un fournisseur de premier choix pour les amateurs de vêtements en latex. Leurs collections comprennent des vêtements de qualité supérieure tels que des robes, des jupes et des combinaisons, qui sont appréciés pour leur esthétique unique et leur durabilité.</p></p>
+                          3. Produits médicaux en latex : Vanderlay Industries propose également une large gamme de produits médicaux en latex tels que des cathéters, des gants chirurgicaux et des produits de protection. Ces articles répondent aux normes de qualité les plus strictes et sont utilisés par les professionnels de la santé du monde entier.<br><br>
+                          
+                          4. Vêtements en latex : Vanderlay Industries est également un fournisseur de premier choix pour les amateurs de vêtements en latex. Leurs collections comprennent des vêtements de qualité supérieure tels que des robes, des jupes et des combinaisons, qui sont appréciés pour leur esthétique unique et leur durabilité.<br><br></p>
                 </section>
             
                 <section class="company-overview">
-                    <h2>Présentation de l'Entreprise</h2> 
-                    <p>La réputation de Vanderlay Industries repose sur la qualité de ses produits et sur son engagement envers l'innovation et le service à la clientèle. Cette entreprise a su se positionner comme un leader sur le marché du latex grâce à l'expertise de son équipe d'ingénieurs vietnamiens basés dans l'est du Laos. Avec des décennies d'expérience, Vanderlay Industries continue de développer de nouveaux produits et de répondre aux besoins changeants de ses clients à travers le monde.
+                    <h2 class="clickable">Présentation de l'Entreprise</h2> 
+                    <p class="details hidden">La réputation de Vanderlay Industries repose sur la qualité de ses produits et sur son engagement envers l'innovation et le service à la clientèle. Cette entreprise a su se positionner comme un leader sur le marché du latex grâce à l'expertise de son équipe d'ingénieurs vietnamiens basés dans l'est du Laos. Avec des décennies d'expérience, Vanderlay Industries continue de développer de nouveaux produits et de répondre aux besoins changeants de ses clients à travers le monde.
  
                         Pour en savoir plus sur Vanderlay Industries et ses produits en latex, vous pouvez visiter leur site web officiel : https://vanderlayindustries.fr</p>
                 </section>
             </main>
 
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    // Récupérer tous les détails et les cacher au démarrage
+                    const allDetails = document.querySelectorAll('.details');
+                    allDetails.forEach(detail => {
+                        detail.classList.add('hidden');
+                    });
+                });
+        
+                // Votre script actuel pour gérer les clics sur les h2
+                const clickableHeaders = document.querySelectorAll('.clickable');
+                clickableHeaders.forEach(header => {
+                    header.addEventListener('click', () => {
+                        const details = header.nextElementSibling;
+                        details.classList.toggle('hidden');
+                    });
+                });
+            </script>
+        
+           
+            
         </body>
     
+        
         <footer>
             <span>&copy; Vanderlay Industries - Réalisation G3 </span>
         </footer>
